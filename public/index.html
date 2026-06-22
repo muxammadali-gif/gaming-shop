@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>GameStore — O'yin valyutalari do'koni</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">🎮</span>
+      <div>
+        <h1>GameStore</h1>
+        <p>O'yin valyutalari do'koni</p>
+      </div>
+    </div>
+    <div class="user-info" id="userInfo">
+      <span class="user-avatar">👤</span>
+      <span class="user-name" id="userName">Mehmon</span>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>🎁 Eng arzon narxlar!</h2>
+      <p>PUBG UC, Telegram Stars, Premium — tez va xavfsiz</p>
+      <div class="badges">
+        <span class="badge">⚡ Tez yetkazish</span>
+        <span class="badge">🔒 Xavfsiz to'lov</span>
+        <span class="badge">💬 24/7 support</span>
+      </div>
+    </div>
+  </section>
+  <nav class="categories">
+    <button class="cat-btn active" data-cat="pubg_uc">🎯 PUBG UC</button>
+    <button class="cat-btn" data-cat="telegram_stars">⭐ Stars</button>
+    <button class="cat-btn" data-cat="telegram_premium">💎 Premium</button>
+  </nav>
+  <main class="products" id="productsGrid"></main>
+  <section class="stats">
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Baxtli mijoz</div></div>
+    <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">Qo'llab-quvvatlash</div></div>
+    <div class="stat-item"><div class="stat-num">5 daq</div><div class="stat-label">O'rtacha yetkazish</div></div>
+  </section>
+  <footer class="footer">
+    <button class="footer-btn" onclick="openSupport()">💬 Support</button>
+    <button class="footer-btn" onclick="openInfo()">ℹ️ Ma'lumot</button>
+  </footer>
+</div>
+<div class="modal" id="buyModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 id="modalTitle">Mahsulot</h3>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-form">
+      <label>Player ID yoki Telegram username</label>
+      <input type="text" id="playerId" placeholder="Masalan: 5212345678 yoki @username">
+      <label>To'lov usuli</label>
+      <div class="payment-methods">
+        <label class="pay-option"><input type="radio" name="payment" value="stars" checked><span>⭐ Telegram Stars</span></label>
+        <label class="pay-option"><input type="radio" name="payment" value="card"><span>💳 Karta orqali</span></label>
+        <label class="pay-option"><input type="radio" name="payment" value="cash"><span>💵 Naqd (admin bilan)</span></label>
+      </div>
+      <button class="btn-primary" id="submitOrder">Buyurtma berish</button>
+    </div>
+  </div>
+</div>
+<div class="modal" id="supportModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeSupport()">✕</button>
+    <h3>💬 Support</h3>
+    <p>Savol yoki muammomi? Yozing!</p>
+    <a href="https://t.me/your_support" target="_blank" class="btn-primary">Telegram orqali yozish</a>
+  </div>
+</div>
+<div class="modal" id="infoModal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeInfo()">✕</button>
+    <h3>ℹ️ Do'kon haqida</h3>
+    <ul class="info-list">
+      <li>✅ O'yin valyutalari tez va arzon narxlarda</li>
+      <li>✅ To'lovdan keyin 5-15 daqiqa ichida yetkaziladi</li>
+      <li>✅ Barcha to'lovlar xavfsiz</li>
+      <li>✅ 24/7 mijozlar bilan aloqa</li>
+      <li>✅ 100% kafolat — muammo bo'lsa, pul qaytariladi</li>
+    </ul>
+    <p class="info-contact">Aloqa: <a href="https://t.me/your_support" target="_blank">@your_support</a></p>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
