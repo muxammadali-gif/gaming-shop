@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: gaming-shop
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: ADMIN_TOKEN
+        value: admin123
+        sync: false
